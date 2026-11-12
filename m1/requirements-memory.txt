@@ -1,0 +1,4 @@
+huggingface_hub>=0.24
+accelerate>=1.4
+pandas>=2
+jupyter>=1
