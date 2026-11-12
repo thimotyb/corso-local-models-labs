@@ -7,6 +7,7 @@ Hands-on notebooks and data for the course on local language models. This reposi
 | Folder | What it contains |
 | --- | --- |
 | `rag/` | Five notebooks on Retrieval-Augmented Generation with Chroma, LangChain and local models, plus all the data they use. Fully offline once the models are downloaded. |
+| `tools/weather/` | A weather tool built step by step (mock, FastAPI over OpenWeather, MCP) and a tool-calling loop for a local model. |
 | `litellm/` | Example LiteLLM gateway configuration to choose the chat model and the embedding model by logical name. |
 | `scripts/` | Data preparation scripts (only needed to refresh the saved web pages). |
 

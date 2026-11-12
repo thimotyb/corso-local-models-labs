@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+httpx
+openai
+pydantic
+python-dotenv
+fastmcp
+pytest
+pytest-asyncio
