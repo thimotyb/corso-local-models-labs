@@ -1,5 +1,5 @@
 # LiteLLM proxy configuration: chat and embedding models are chosen by logical name.
-# Start the gateway with:   litellm --config litellm/config.yaml --port 4000
+# Start the gateway with:   litellm --config m8/litellm/config.yaml --port 4000
 # Clients then use base_url http://localhost:4000/v1 and the names below.
 # Check the LiteLLM documentation (https://docs.litellm.ai/) for the current provider prefixes.
 model_list:

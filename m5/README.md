@@ -24,9 +24,9 @@ user question ──► local model ──proposes──► get_current_weather(
 From the repository root, with the virtual environment active:
 
 ```bash
-pip install -r tools/weather/requirements.txt
+pip install -r m5/requirements.txt
 cp .env.example .env     # then set OPENWEATHER_API_KEY, or use WEATHER_MOCK=1
-cd tools/weather
+cd m5
 python -m pytest -q      # 8 tests, no key needed
 ```
 

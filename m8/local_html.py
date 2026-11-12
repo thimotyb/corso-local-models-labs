@@ -1,7 +1,7 @@
 """Load Wikivoyage pages from local files instead of downloading them.
 
 LocalHtmlLoader(url).load() behaves like AsyncHtmlLoader(url).load() for the pages saved in
-rag/data/wikivoyage: it returns one Document whose page_content is the raw HTML and whose
+m8/data/wikivoyage: it returns one Document whose page_content is the raw HTML and whose
 metadata["source"] is the original URL (kept so answers can cite the source).
 """
 from pathlib import Path

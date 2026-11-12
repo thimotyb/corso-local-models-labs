@@ -25,8 +25,8 @@ All of them implement one small interface (`judge.py`): `judge(state, questions)
 From the repository root, with the virtual environment active:
 
 ```bash
-pip install -r judges/requirements.txt
-cd judges
+pip install -r m15/requirements.txt
+cd m15
 python -m pytest -q          # 11 tests, no model download or key needed
 ```
 

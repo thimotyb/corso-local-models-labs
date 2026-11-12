@@ -15,7 +15,7 @@ DEST = [
     "Wadebridge", "Penzance", "Newquay", "St_Ives", "Port_Isaac", "Looe", "Polperro", "Porthleven",
     "East_Sussex", "Brighton", "Battle", "Hastings_(England)", "Rye_(England)", "Seaford", "Ashdown_Forest",
 ]
-OUT = Path(__file__).resolve().parent.parent / "rag/data/wikivoyage"
+OUT = Path(__file__).resolve().parent.parent / "m8/data/wikivoyage"
 OUT.mkdir(parents=True, exist_ok=True)
 ok = []
 for d in DEST:

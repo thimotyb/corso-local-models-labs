@@ -6,10 +6,10 @@ Hands-on notebooks and data for the course on local language models. This reposi
 
 | Folder | What it contains |
 | --- | --- |
-| `rag/` | Five notebooks on Retrieval-Augmented Generation with Chroma, LangChain and local models, plus all the data they use. Fully offline once the models are downloaded. |
-| `tools/weather/` | A weather tool built step by step (mock, FastAPI over OpenWeather, MCP) and a tool-calling loop for a local model. |
-| `judges/` | Compact local judges and decision models (OpenDecider, a chat model as judge, a classical classifier): typed questions, calibration metrics, cascades. Runs on CPU. |
-| `litellm/` | Example LiteLLM gateway configuration to choose the chat model and the embedding model by logical name. |
+| `m1/` | A runnable DistilBERT tokenization exercise. |
+| `m5/` | A weather tool built step by step (mock, FastAPI over OpenWeather, MCP) and a tool-calling loop for a local model. |
+| `m8/` | Five notebooks on Retrieval-Augmented Generation with Chroma, LangChain and local models, plus all the data they use; a LiteLLM gateway example. Fully offline once the models are downloaded. |
+| `m15/` | Compact local judges and decision models (OpenDecider, a chat model as judge, a classical classifier): typed questions, calibration metrics, cascades. Runs on CPU. |
 | `scripts/` | Data preparation scripts (only needed to refresh the saved web pages). |
 
 More labs (quantization, fine-tuning, serving) will be added in their own folders.
@@ -28,16 +28,16 @@ cd corso-local-models-labs
 
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r rag/requirements.txt
+pip install -r m8/requirements.txt
 
 ollama pull gemma4:e2b          # chat model
 ollama pull nomic-embed-text    # embedding model
 
 cp .env.example .env            # LLM_PROVIDER=ollama is the default
-jupyter notebook rag/
+jupyter notebook m8/
 ```
 
-Open the notebooks from inside `rag/` so that relative paths (`data/...`) resolve. The notebooks read settings from the `.env` file in the repository root. `.env` is ignored by git: never commit API keys.
+Open the RAG notebooks from inside `m8/` so that relative paths (`data/...`) resolve. The notebooks read settings from the `.env` file in the repository root. `.env` is ignored by git: never commit API keys. M1 has its own small setup in `m1/README.md`.
 
 ### Choosing the models
 
@@ -45,31 +45,35 @@ Chat model and embedding model are always separate choices:
 
 - `OLLAMA_MODEL` and `OLLAMA_EMBEDDING_MODEL` in `.env` select the local models.
 - `LLM_PROVIDER` can switch to `openai`, `gemini` or `deepseek` (their API keys are then required), to compare a local model with a hosted one.
-- Alternatively, run a LiteLLM gateway with `litellm/config.yaml` (`pip install "litellm[proxy]"`) and address models by logical name.
+- Alternatively, run a LiteLLM gateway with `m8/litellm/config.yaml` (`pip install "litellm[proxy]"`) and address models by logical name.
 
 **If you change the embedding model, delete and rebuild the collections**: vectors from different models are not comparable.
 
-## RAG labs
+## M1 lab
+
+`m1/01_bert_tokenization.ipynb` demonstrates WordPiece tokenization and BERT-family input encoding. See `m1/README.md`.
+
+## M8 RAG labs
 
 | Notebook | Topic | Data |
 | --- | --- | --- |
-| `rag/01_chroma_from_scratch.ipynb` | Ingestion, semantic search and a RAG chatbot built from three functions; a safe prompt that refuses to invent answers. | Text chunks inside the notebook |
-| `rag/02_qa_across_documents.ipynb` | Loaders for DOCX, PDF and TXT, a folder ingestion loop, a LangChain RAG chain, stateless versus conversational follow-up questions. | `rag/data/Paestum`, `rag/data/CilentoTouristInfo` |
-| `rag/03_advanced_indexing.ipynb` | Granular versus coarse chunks, parent-document, multi-vector, summary and hypothetical-question indexing. | `rag/data/wikivoyage` |
-| `rag/04_question_transformations.ipynb` | Rewrite-retrieve-read, multi-query, step-back and HyDE. | `rag/data/wikivoyage` |
-| `rag/05_query_generation.ipynb` | Metadata filters, self-querying, text-to-SQL, routing between sources and RAG fusion. | `rag/data/wikivoyage`, `rag/*.sql` |
+| `m8/01_chroma_from_scratch.ipynb` | Ingestion, semantic search and a RAG chatbot built from three functions; a safe prompt that refuses to invent answers. | Text chunks inside the notebook |
+| `m8/02_qa_across_documents.ipynb` | Loaders for DOCX, PDF and TXT, a folder ingestion loop, a LangChain RAG chain, stateless versus conversational follow-up questions. | `m8/data/Paestum`, `m8/data/CilentoTouristInfo` |
+| `m8/03_advanced_indexing.ipynb` | Granular versus coarse chunks, parent-document, multi-vector, summary and hypothetical-question indexing. | `m8/data/wikivoyage` |
+| `m8/04_question_transformations.ipynb` | Rewrite-retrieve-read, multi-query, step-back and HyDE. | `m8/data/wikivoyage` |
+| `m8/05_query_generation.ipynb` | Metadata filters, self-querying, text-to-SQL, routing between sources and RAG fusion. | `m8/data/wikivoyage`, `m8/*.sql` |
 
 Suggested way of working: keep a table with one row per run (chat model, embedding model, parameters, question, answer, whether it is correct and grounded in the retrieved text).
 
 Notes:
 
 - Outputs are cleared in the notebooks; run the cells to see results.
-- `02_` skips the Wikipedia download of the original exercise: ingestion uses only the local files.
-- `05_` creates a SQLite database (`UkBooking.db`) from the two SQL scripts the first time it runs.
-- Web pages are read through `rag/local_html.py`, which mimics the web loader on saved copies.
+- `m8/02_` skips the Wikipedia download of the original exercise: ingestion uses only the local files.
+- `m8/05_` creates a SQLite database (`UkBooking.db`) from the two SQL scripts the first time it runs.
+- Web pages are read through `m8/local_html.py`, which mimics the web loader on saved copies.
 
 ## Data and licences
 
-- `rag/data/wikivoyage/`: raw HTML of 21 pages of English Wikivoyage, saved once by `scripts/fetch_wikivoyage_pages.py`. The text is available under a Creative Commons Attribution-ShareAlike licence; authors and licence version are listed on each source page (see `rag/data/wikivoyage/README.md`).
-- `rag/data/Paestum` and `rag/data/CilentoTouristInfo`: sample tourist documents collected for the original exercises, used here as a teaching corpus.
+- `m8/data/wikivoyage/`: raw HTML of 21 pages of English Wikivoyage, saved once by `scripts/fetch_wikivoyage_pages.py`. The text is available under a Creative Commons Attribution-ShareAlike licence; authors and licence version are listed on each source page (see `m8/data/wikivoyage/README.md`).
+- `m8/data/Paestum` and `m8/data/CilentoTouristInfo`: sample tourist documents collected for the original exercises, used here as a teaching corpus.
 - The code is for teaching purposes.
