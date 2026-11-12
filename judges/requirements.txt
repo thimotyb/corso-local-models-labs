@@ -1,0 +1,7 @@
+opendecider            # nano model, CPU is fine; use "opendecider[small]" for the 4B model
+xgboost
+scikit-learn
+numpy
+openai                 # only for the general-LLM judge (Ollama / LiteLLM endpoint)
+python-dotenv
+pytest

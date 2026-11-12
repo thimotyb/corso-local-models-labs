@@ -8,6 +8,7 @@ Hands-on notebooks and data for the course on local language models. This reposi
 | --- | --- |
 | `rag/` | Five notebooks on Retrieval-Augmented Generation with Chroma, LangChain and local models, plus all the data they use. Fully offline once the models are downloaded. |
 | `tools/weather/` | A weather tool built step by step (mock, FastAPI over OpenWeather, MCP) and a tool-calling loop for a local model. |
+| `judges/` | Compact local judges and decision models (OpenDecider, a chat model as judge, a classical classifier): typed questions, calibration metrics, cascades. Runs on CPU. |
 | `litellm/` | Example LiteLLM gateway configuration to choose the chat model and the embedding model by logical name. |
 | `scripts/` | Data preparation scripts (only needed to refresh the saved web pages). |
 
