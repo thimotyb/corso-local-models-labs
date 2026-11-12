@@ -16,4 +16,4 @@ pip install -r m1/requirements-extended.txt
 jupyter notebook m1/
 ```
 
-For the short exercise only, install `m1/requirements.txt` and Jupyter instead. Run each notebook from top to bottom. The extended notebook deliberately trains for just three steps on a small balanced sample; its metrics demonstrate the workflow and are not model-quality claims. It writes model artifacts to a temporary directory and never uploads them. See [NOTICE.md](NOTICE.md) for figure and dataset attribution.
+For the short exercise only, install `m1/requirements.txt` and Jupyter instead. Both notebooks include saved outputs from a complete example run, including the extended notebook’s generated plots. Re-run the cells from top to bottom for your own environment. The extended notebook deliberately trains for just three steps on a small balanced sample; its metrics demonstrate the workflow and are not model-quality claims. It writes model artifacts to a temporary directory and never uploads them. See [NOTICE.md](NOTICE.md) for figure and dataset attribution.
