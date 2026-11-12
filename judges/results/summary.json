@@ -1,0 +1,725 @@
+{
+ "threshold": 0.7,
+ "common": {
+  "n": 47,
+  "ids": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   36,
+   37,
+   38,
+   39,
+   40,
+   41,
+   42,
+   43,
+   44,
+   45,
+   46,
+   47,
+   48
+  ],
+  "metrics": {
+   "gemma-12b": {
+    "team": {
+     "n": 47,
+     "acc": 0.7659574468085106,
+     "ece": 0.23315004547647833,
+     "brier": 0.4351236534512662,
+     "conf": 0.9172989215772507,
+     "acc_conf": 0.7659574468085106,
+     "cov_conf": 1.0
+    },
+    "urgent": {
+     "n": 47,
+     "acc": 0.851063829787234,
+     "ece": 0.09553191489361706,
+     "brier": 0.21401276595744684,
+     "conf": 0.9002127659574468,
+     "acc_conf": 0.851063829787234,
+     "cov_conf": 1.0
+    },
+    "refund": {
+     "n": 47,
+     "acc": 0.9361702127659575,
+     "ece": 0.048297872340425596,
+     "brier": 0.08917021276595746,
+     "conf": 0.9844680851063831,
+     "acc_conf": 0.9361702127659575,
+     "cov_conf": 1.0
+    }
+   },
+   "opendecider-nano": {
+    "team": {
+     "n": 47,
+     "acc": 0.8936170212765957,
+     "ece": 0.13100796557487326,
+     "brier": 0.1855298098172458,
+     "conf": 0.8029438384035801,
+     "acc_conf": 0.918918918918919,
+     "cov_conf": 0.7872340425531915
+    },
+    "urgent": {
+     "n": 47,
+     "acc": 0.8723404255319149,
+     "ece": 0.23237072771534004,
+     "brier": 0.20341064624877098,
+     "conf": 0.7246200634126968,
+     "acc_conf": 1.0,
+     "cov_conf": 0.5319148936170213
+    },
+    "refund": {
+     "n": 47,
+     "acc": 0.8936170212765957,
+     "ece": 0.0927476118061137,
+     "brier": 0.1605982837750236,
+     "conf": 0.8008694094704821,
+     "acc_conf": 0.9714285714285714,
+     "cov_conf": 0.7446808510638298
+    }
+   },
+   "xgboost-tfidf": {
+    "team": {
+     "n": 47,
+     "acc": 0.9787234042553191,
+     "ece": 0.07857502901807746,
+     "brier": 0.03029691945809928,
+     "conf": 0.9205564450710377,
+     "acc_conf": 1.0,
+     "cov_conf": 0.9361702127659575
+    },
+    "urgent": {
+     "n": 47,
+     "acc": 0.9361702127659575,
+     "ece": 0.08494439090978588,
+     "brier": 0.07910955387490722,
+     "conf": 0.9078660144054509,
+     "acc_conf": 0.9772727272727273,
+     "cov_conf": 0.9361702127659575
+    },
+    "refund": {
+     "n": 47,
+     "acc": 0.9787234042553191,
+     "ece": 0.03458934556692841,
+     "brier": 0.0531875640348524,
+     "conf": 0.9441340586883907,
+     "acc_conf": 0.9782608695652174,
+     "cov_conf": 0.9787234042553191
+    }
+   }
+  }
+ },
+ "full": {
+  "n": 120,
+  "metrics": {
+   "opendecider-nano": {
+    "team": {
+     "n": 120,
+     "acc": 0.925,
+     "ece": 0.1544743786255519,
+     "brier": 0.15868694623650334,
+     "conf": 0.78584410349528,
+     "acc_conf": 0.9655172413793104,
+     "cov_conf": 0.725
+    },
+    "urgent": {
+     "n": 120,
+     "acc": 0.8833333333333333,
+     "ece": 0.1795400592808922,
+     "brier": 0.1811780940538771,
+     "conf": 0.7524254636839032,
+     "acc_conf": 0.9880952380952381,
+     "cov_conf": 0.7
+    },
+    "refund": {
+     "n": 120,
+     "acc": 0.8916666666666667,
+     "ece": 0.11449617343023419,
+     "brier": 0.13473377946630183,
+     "conf": 0.8177282303882142,
+     "acc_conf": 0.9795918367346939,
+     "cov_conf": 0.8166666666666667
+    }
+   },
+   "xgboost-tfidf": {
+    "team": {
+     "n": 120,
+     "acc": 0.8583333333333333,
+     "ece": 0.07553661763668063,
+     "brier": 0.195737106608056,
+     "conf": 0.8852264424165089,
+     "acc_conf": 0.9074074074074074,
+     "cov_conf": 0.9
+    },
+    "urgent": {
+     "n": 120,
+     "acc": 0.8666666666666667,
+     "ece": 0.05532133769593203,
+     "brier": 0.19570579830551113,
+     "conf": 0.8929144416411873,
+     "acc_conf": 0.9150943396226415,
+     "cov_conf": 0.8833333333333333
+    },
+    "refund": {
+     "n": 120,
+     "acc": 0.9666666666666667,
+     "ece": 0.03294485501634574,
+     "brier": 0.06295333469834667,
+     "conf": 0.9467104336402069,
+     "acc_conf": 0.9663865546218487,
+     "cov_conf": 0.9916666666666667
+    }
+   }
+  }
+ },
+ "latency": {
+  "gemma-12b": {
+   "mean_ms": 16073.04087097872,
+   "median_ms": 12419.55340200002,
+   "p95_ms": 32864.80717999984
+  },
+  "opendecider-nano": {
+   "mean_ms": 1456.991091566609,
+   "median_ms": 1322.6217134997569,
+   "p95_ms": 2018.6290479996387
+  },
+  "xgboost-tfidf": {
+   "mean_ms": 0.0,
+   "median_ms": 0.0,
+   "p95_ms": 0.0
+  }
+ },
+ "by_kind": {
+  "opendecider-nano": {
+   "team": {
+    "template": {
+     "n": 100,
+     "acc": 0.92
+    },
+    "hand_written": {
+     "n": 20,
+     "acc": 0.95
+    }
+   },
+   "urgent": {
+    "template": {
+     "n": 100,
+     "acc": 0.89
+    },
+    "hand_written": {
+     "n": 20,
+     "acc": 0.85
+    }
+   },
+   "refund": {
+    "template": {
+     "n": 100,
+     "acc": 0.89
+    },
+    "hand_written": {
+     "n": 20,
+     "acc": 0.9
+    }
+   }
+  },
+  "xgboost-tfidf": {
+   "team": {
+    "template": {
+     "n": 100,
+     "acc": 0.98
+    },
+    "hand_written": {
+     "n": 20,
+     "acc": 0.25
+    }
+   },
+   "urgent": {
+    "template": {
+     "n": 100,
+     "acc": 0.92
+    },
+    "hand_written": {
+     "n": 20,
+     "acc": 0.6
+    }
+   },
+   "refund": {
+    "template": {
+     "n": 100,
+     "acc": 0.99
+    },
+    "hand_written": {
+     "n": 20,
+     "acc": 0.85
+    }
+   }
+  }
+ },
+ "reliability_nano": [
+  {
+   "lo": 0.3,
+   "hi": 0.4,
+   "n": 2,
+   "conf": 0.3665856420993805,
+   "acc": 0.5
+  },
+  {
+   "lo": 0.4,
+   "hi": 0.5,
+   "n": 2,
+   "conf": 0.4595544636249542,
+   "acc": 0.0
+  },
+  {
+   "lo": 0.5,
+   "hi": 0.6,
+   "n": 41,
+   "conf": 0.5537316508409453,
+   "acc": 0.5365853658536586
+  },
+  {
+   "lo": 0.6,
+   "hi": 0.7,
+   "n": 46,
+   "conf": 0.6547456150469573,
+   "acc": 0.8260869565217391
+  },
+  {
+   "lo": 0.7,
+   "hi": 0.8,
+   "n": 72,
+   "conf": 0.7518565023524894,
+   "acc": 0.9305555555555556
+  },
+  {
+   "lo": 0.8,
+   "hi": 0.9,
+   "n": 119,
+   "conf": 0.8577307788263849,
+   "acc": 0.9915966386554622
+  },
+  {
+   "lo": 0.9,
+   "hi": 1.0,
+   "n": 78,
+   "conf": 0.9236221624395022,
+   "acc": 1.0
+  }
+ ],
+ "cascade": [
+  {
+   "setup": "nano alone",
+   "threshold": 0.5,
+   "questions": 360,
+   "auto_acc": 0.9073033707865169,
+   "human_share": 0.011111111111111112,
+   "escalated_share": 0.0
+  },
+  {
+   "setup": "nano then XGBoost",
+   "threshold": 0.5,
+   "questions": 360,
+   "auto_acc": 0.9083333333333333,
+   "human_share": 0.0,
+   "escalated_share": 0.011111111111111112
+  },
+  {
+   "setup": "XGBoost alone",
+   "threshold": 0.5,
+   "questions": 360,
+   "auto_acc": 0.9019607843137255,
+   "human_share": 0.008333333333333333,
+   "escalated_share": 0.0
+  },
+  {
+   "setup": "nano alone",
+   "threshold": 0.6,
+   "questions": 360,
+   "auto_acc": 0.9555555555555556,
+   "human_share": 0.125,
+   "escalated_share": 0.0
+  },
+  {
+   "setup": "nano then XGBoost",
+   "threshold": 0.6,
+   "questions": 360,
+   "auto_acc": 0.9467787114845938,
+   "human_share": 0.008333333333333333,
+   "escalated_share": 0.11666666666666667
+  },
+  {
+   "setup": "XGBoost alone",
+   "threshold": 0.6,
+   "questions": 360,
+   "auto_acc": 0.9140401146131805,
+   "human_share": 0.030555555555555555,
+   "escalated_share": 0.0
+  },
+  {
+   "setup": "nano alone",
+   "threshold": 0.7,
+   "questions": 360,
+   "auto_acc": 0.9776951672862454,
+   "human_share": 0.25277777777777777,
+   "escalated_share": 0.0
+  },
+  {
+   "setup": "nano then XGBoost",
+   "threshold": 0.7,
+   "questions": 360,
+   "auto_acc": 0.9712643678160919,
+   "human_share": 0.03333333333333333,
+   "escalated_share": 0.21944444444444444
+  },
+  {
+   "setup": "XGBoost alone",
+   "threshold": 0.7,
+   "questions": 360,
+   "auto_acc": 0.9309309309309309,
+   "human_share": 0.075,
+   "escalated_share": 0.0
+  },
+  {
+   "setup": "nano alone",
+   "threshold": 0.8,
+   "questions": 360,
+   "auto_acc": 0.9949238578680203,
+   "human_share": 0.4527777777777778,
+   "escalated_share": 0.0
+  },
+  {
+   "setup": "nano then XGBoost",
+   "threshold": 0.8,
+   "questions": 360,
+   "auto_acc": 0.9756838905775076,
+   "human_share": 0.08611111111111111,
+   "escalated_share": 0.36666666666666664
+  },
+  {
+   "setup": "XGBoost alone",
+   "threshold": 0.8,
+   "questions": 360,
+   "auto_acc": 0.9611650485436893,
+   "human_share": 0.14166666666666666,
+   "escalated_share": 0.0
+  },
+  {
+   "setup": "nano alone",
+   "threshold": 0.9,
+   "questions": 360,
+   "auto_acc": 1.0,
+   "human_share": 0.7833333333333333,
+   "escalated_share": 0.0
+  },
+  {
+   "setup": "nano then XGBoost",
+   "threshold": 0.9,
+   "questions": 360,
+   "auto_acc": 0.9735849056603774,
+   "human_share": 0.2638888888888889,
+   "escalated_share": 0.5194444444444445
+  },
+  {
+   "setup": "XGBoost alone",
+   "threshold": 0.9,
+   "questions": 360,
+   "auto_acc": 0.9722222222222222,
+   "human_share": 0.3,
+   "escalated_share": 0.0
+  }
+ ],
+ "wrong_hand_written": {
+  "opendecider-nano": [
+   {
+    "id": 105,
+    "task": "urgent",
+    "truth": true,
+    "predicted": false,
+    "confidence": 0.7073560655117035,
+    "text": "Quote needed for 50 seats; the board votes this afternoon."
+   },
+   {
+    "id": 109,
+    "task": "refund",
+    "truth": false,
+    "predicted": true,
+    "confidence": 0.5367762446403503,
+    "text": "Wrong amount on invoice 88, my accountant needs the corrected one by end of day."
+   },
+   {
+    "id": 111,
+    "task": "urgent",
+    "truth": true,
+    "predicted": false,
+    "confidence": 0.5346198678016663,
+    "text": "The API key stopped working during a demo to our client in 30 minutes."
+   },
+   {
+    "id": 113,
+    "task": "urgent",
+    "truth": false,
+    "predicted": true,
+    "confidence": 0.6190675497055054,
+    "text": "Please cancel my subscription and refund this month; I noticed it only today."
+   },
+   {
+    "id": 118,
+    "task": "team",
+    "truth": "sales",
+    "predicted": "engineering",
+    "confidence": 0.3614071309566498,
+    "text": "We need an urgent contract amendment before the signing at 5 pm."
+   },
+   {
+    "id": 119,
+    "task": "refund",
+    "truth": false,
+    "predicted": true,
+    "confidence": 0.5466418266296387,
+    "text": "I got a refund for the wrong order; please correct it, no rush."
+   }
+  ],
+  "xgboost-tfidf": [
+   {
+    "id": 100,
+    "task": "team",
+    "truth": "billing",
+    "predicted": "sales",
+    "confidence": 0.8526290655136108,
+    "text": "I do not want a refund, I want the double charge on order 5521 explained. Next week is fine."
+   },
+   {
+    "id": 101,
+    "task": "team",
+    "truth": "billing",
+    "predicted": "sales",
+    "confidence": 0.546644389629364,
+    "text": "The refund you promised last month has still not arrived, and the bank closes my account tomorrow."
+   },
+   {
+    "id": 101,
+    "task": "urgent",
+    "truth": true,
+    "predicted": false,
+    "confidence": 0.9410292841494083,
+    "text": "The refund you promised last month has still not arrived, and the bank closes my account tomorrow."
+   },
+   {
+    "id": 102,
+    "task": "team",
+    "truth": "engineering",
+    "predicted": "billing",
+    "confidence": 0.7530482411384583,
+    "text": "Our checkout is down right now and we are losing sales every minute."
+   },
+   {
+    "id": 102,
+    "task": "urgent",
+    "truth": true,
+    "predicted": false,
+    "confidence": 0.9165088534355164,
+    "text": "Our checkout is down right now and we are losing sales every minute."
+   },
+   {
+    "id": 103,
+    "task": "team",
+    "truth": "engineering",
+    "predicted": "sales",
+    "confidence": 0.7450389862060547,
+    "text": "Could your engineers look at the slow dashboard when they get a chance? No refund needed."
+   },
+   {
+    "id": 103,
+    "task": "refund",
+    "truth": false,
+    "predicted": true,
+    "confidence": 0.7949738502502441,
+    "text": "Could your engineers look at the slow dashboard when they get a chance? No refund needed."
+   },
+   {
+    "id": 104,
+    "task": "team",
+    "truth": "billing",
+    "predicted": "sales",
+    "confidence": 0.8818461298942566,
+    "text": "We were overcharged, please credit it back to our card."
+   },
+   {
+    "id": 104,
+    "task": "refund",
+    "truth": true,
+    "predicted": false,
+    "confidence": 0.774286687374115,
+    "text": "We were overcharged, please credit it back to our card."
+   },
+   {
+    "id": 108,
+    "task": "team",
+    "truth": "engineering",
+    "predicted": "sales",
+    "confidence": 0.3771325349807739,
+    "text": "The app crashes at payment. I want to cancel the order and get my money back, immediately."
+   },
+   {
+    "id": 108,
+    "task": "urgent",
+    "truth": true,
+    "predicted": false,
+    "confidence": 0.9792356584221125,
+    "text": "The app crashes at payment. I want to cancel the order and get my money back, immediately."
+   },
+   {
+    "id": 109,
+    "task": "team",
+    "truth": "billing",
+    "predicted": "engineering",
+    "confidence": 0.5676402449607849,
+    "text": "Wrong amount on invoice 88, my accountant needs the corrected one by end of day."
+   },
+   {
+    "id": 109,
+    "task": "urgent",
+    "truth": true,
+    "predicted": false,
+    "confidence": 0.9700192715972662,
+    "text": "Wrong amount on invoice 88, my accountant needs the corrected one by end of day."
+   },
+   {
+    "id": 110,
+    "task": "team",
+    "truth": "billing",
+    "predicted": "sales",
+    "confidence": 0.6269330382347107,
+    "text": "I would like to return the product and get a refund; there is no hurry."
+   },
+   {
+    "id": 111,
+    "task": "team",
+    "truth": "engineering",
+    "predicted": "sales",
+    "confidence": 0.7135812640190125,
+    "text": "The API key stopped working during a demo to our client in 30 minutes."
+   },
+   {
+    "id": 111,
+    "task": "urgent",
+    "truth": true,
+    "predicted": false,
+    "confidence": 0.7992013692855835,
+    "text": "The API key stopped working during a demo to our client in 30 minutes."
+   },
+   {
+    "id": 112,
+    "task": "team",
+    "truth": "sales",
+    "predicted": "billing",
+    "confidence": 0.6665864586830139,
+    "text": "Do you have a student discount? I am not in a hurry."
+   },
+   {
+    "id": 114,
+    "task": "team",
+    "truth": "engineering",
+    "predicted": "sales",
+    "confidence": 0.7414620518684387,
+    "text": "The reset email never arrives and I am locked out before tomorrow's audit."
+   },
+   {
+    "id": 114,
+    "task": "urgent",
+    "truth": true,
+    "predicted": false,
+    "confidence": 0.639253556728363,
+    "text": "The reset email never arrives and I am locked out before tomorrow's audit."
+   },
+   {
+    "id": 115,
+    "task": "team",
+    "truth": "sales",
+    "predicted": "billing",
+    "confidence": 0.7835497856140137,
+    "text": "Interested in your enterprise offer, can someone call me this week?"
+   },
+   {
+    "id": 116,
+    "task": "team",
+    "truth": "billing",
+    "predicted": "sales",
+    "confidence": 0.7221897840499878,
+    "text": "You charged my card 3 times! Fix this now and refund two of them."
+   },
+   {
+    "id": 116,
+    "task": "urgent",
+    "truth": true,
+    "predicted": false,
+    "confidence": 0.8495188057422638,
+    "text": "You charged my card 3 times! Fix this now and refund two of them."
+   },
+   {
+    "id": 117,
+    "task": "team",
+    "truth": "engineering",
+    "predicted": "sales",
+    "confidence": 0.861788272857666,
+    "text": "The export button does nothing since the last update."
+   },
+   {
+    "id": 118,
+    "task": "urgent",
+    "truth": true,
+    "predicted": false,
+    "confidence": 0.93736232817173,
+    "text": "We need an urgent contract amendment before the signing at 5 pm."
+   },
+   {
+    "id": 119,
+    "task": "team",
+    "truth": "billing",
+    "predicted": "engineering",
+    "confidence": 0.5768876075744629,
+    "text": "I got a refund for the wrong order; please correct it, no rush."
+   },
+   {
+    "id": 119,
+    "task": "refund",
+    "truth": false,
+    "predicted": true,
+    "confidence": 0.9812182784080505,
+    "text": "I got a refund for the wrong order; please correct it, no rush."
+   }
+  ]
+ }
+}

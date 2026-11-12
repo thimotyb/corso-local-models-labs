@@ -42,9 +42,20 @@ OPENDECIDER_MODEL=manjunathshiva/opendecider-small \
 JUDGE_MODEL=gemma4:12b python run_bench.py --backend llm --label gemma-12b
 
 python report.py                                  # comparison table on the tickets every backend answered
+python analyze.py                                # all numbers, by kind of ticket, reliability, cascade replay
 ```
 
-Results are stored in `results/<label>.json`, one row per ticket, so any analysis can be re-run without calling a model again. `results/` already contains reference runs (see below).
+Results are stored in `results/<label>.json`, one row per ticket, so any analysis can be re-run without calling a model again. Everything measured for the course is saved here:
+
+| File | Content |
+| --- | --- |
+| `data/tickets.jsonl` | The 120 tickets with their correct answers (ids 0-99 template-built, 100-119 hand-written and hard). |
+| `results/opendecider-nano.json`, `xgboost-tfidf.json`, `gemma-12b.json` | Per-ticket probabilities, latency and errors of each reference run. |
+| `results/summary.json` | Every number used in the course (metrics, latency, accuracy by kind of ticket, reliability bins, cascade replay). Produced by `analyze.py`. |
+| `results/REPORT.md`, `results/ERRORS.md` | The same results as readable tables, and the hand-written tickets each backend gets wrong. |
+| `runs/environment.json` | Machine, library versions, model revision and provenance of each run. |
+
+The `gemma-12b` file comes from an earlier run on a different (GPU) machine and covers 49 tickets; see `runs/environment.json`.
 
 ## Metrics
 

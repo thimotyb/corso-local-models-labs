@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-12",
+  "opendecider-nano": {
+    "backend": "opendecider",
+    "model": "manjunathshiva/opendecider-nano",
+    "model_revision": "1e1f0a7322e446c5ae9bbe840df11680f18a752a",
+    "device": "cpu",
+    "machine": "Intel Core 7 150U, 12 threads, 15 GB RAM, no GPU, Linux on WSL2",
+    "libraries": {"opendecider": "0.9.0", "torch": "2.15.0+cpu", "transformers": "5.22.2", "safetensors": "0.8.0", "huggingface_hub": "2.4.0"},
+    "tickets": 120,
+    "errors": 0,
+    "notes": "One call per ticket with the three questions; latency is the judge call only (model load excluded). Wall time of the whole run: 217 s including model load."
+  },
+  "xgboost-tfidf": {
+    "backend": "xgboost",
+    "device": "cpu",
+    "machine": "same as opendecider-nano",
+    "libraries": {"xgboost": "3.4.1", "scikit-learn": "1.9.1", "numpy": "2.5.4"},
+    "setup": "TfidfVectorizer(ngram_range=(1, 2), sublinear_tf=True); XGBClassifier(n_estimators=120, max_depth=3, learning_rate=0.1); 5-fold stratified out-of-fold, random_state=14, one model per question, no tuning",
+    "tickets": 120,
+    "errors": 0
+  },
+  "gemma-12b": {
+    "backend": "llm",
+    "model": "Gemma 12B served by Ollama, general chat model prompted for JSON with probabilities",
+    "device": "the author's GPU machine (not this one)",
+    "provenance": "Copied from an earlier run of the benchmark in the building-llm-applications repository (chapter 14, 2026-11-02); not re-run for this repository. Interrupted after 49 of 120 tickets (ids 0-48, template-built only); 2 tickets failed because the model never produced an answer for the refund question on tickets with a negation.",
+    "tickets": 49,
+    "errors": 2
+  },
+  "not_measured": ["opendecider-small (4B): needs the GPU machine", "GGUF builds through Ollama or LM Studio"]
+}
