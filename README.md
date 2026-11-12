@@ -6,7 +6,7 @@ Hands-on notebooks and data for the course on local language models. This reposi
 
 | Folder | What it contains |
 | --- | --- |
-| `m1/` | A runnable DistilBERT tokenization exercise. |
+| `m1/` | Two DistilBERT notebooks: a short tokenization exercise and a full text-classification lab with figures. |
 | `m5/` | A weather tool built step by step (mock, FastAPI over OpenWeather, MCP) and a tool-calling loop for a local model. |
 | `m8/` | Five notebooks on Retrieval-Augmented Generation with Chroma, LangChain and local models, plus all the data they use; a LiteLLM gateway example. Fully offline once the models are downloaded. |
 | `m15/` | Compact local judges and decision models (OpenDecider, a chat model as judge, a classical classifier): typed questions, calibration metrics, cascades. Runs on CPU. |
@@ -51,7 +51,7 @@ Chat model and embedding model are always separate choices:
 
 ## M1 lab
 
-`m1/01_bert_tokenization.ipynb` demonstrates WordPiece tokenization and BERT-family input encoding. See `m1/README.md`.
+`m1/01_bert_tokenization.ipynb` is the short WordPiece exercise; `m1/02_bert_text_classification.ipynb` covers the complete dataset-to-classifier path. See `m1/README.md`.
 
 ## M8 RAG labs
 

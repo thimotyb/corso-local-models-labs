@@ -1,0 +1,9 @@
+# Full M1 text-classification notebook (02_bert_text_classification.ipynb)
+transformers>=4.45,<5
+datasets>=3,<5
+torch>=2.2
+pandas>=2
+matplotlib>=3.8
+scikit-learn>=1.4
+accelerate>=1
+jupyter>=1
