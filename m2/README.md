@@ -4,10 +4,69 @@ This lab runs one local GGUF file through two inference runtimes, using the same
 
 ## Prerequisites
 
-- Install [Ollama](https://ollama.com/download) and a compatible [llama.cpp build](https://github.com/ggml-org/llama.cpp/blob/master/docs/build.md).
+- For Ubuntu 22.04 on amd64, follow the exact install commands below. On other systems, use the official [Ollama Linux guide](https://docs.ollama.com/linux) and [llama.cpp build guide](https://github.com/ggml-org/llama.cpp/blob/master/docs/build.md).
 - Obtain a GGUF chat model whose licence permits the planned use. Check its model card, file name, quantization, size, chat template and supported context before downloading.
 - Keep enough disk space for the file and RAM/VRAM for the model plus runtime buffers and KV cache. Begin with an 8K context; increase only if the model and machine can support it.
 - This lab uses loopback addresses (`127.0.0.1`). Do not bind these development servers to a public interface.
+
+## Install on Ubuntu 22.04 (amd64)
+
+These commands install the current Ollama release and build llama.cpp from source. The CPU build works without an NVIDIA GPU or CUDA toolkit. Allow several minutes for the llama.cpp build.
+
+### 1. Install and verify Ollama
+
+```bash
+sudo apt update
+sudo apt install -y curl
+curl -fsSL https://ollama.com/install.sh | sh
+sudo systemctl enable --now ollama
+ollama --version
+sudo systemctl status ollama --no-pager
+curl http://127.0.0.1:11434/api/tags
+```
+
+The final command should return JSON from Ollama. The installer creates and starts the system service on Linux; the `systemctl` command ensures it is enabled after reboot.
+
+### 2. Build and install llama.cpp for CPU
+
+```bash
+sudo apt update
+sudo apt install -y build-essential cmake git
+mkdir -p "$HOME/src"
+cd "$HOME/src"
+git clone https://github.com/ggml-org/llama.cpp.git
+cd llama.cpp
+cmake -S . -B build
+cmake --build build --config Release --parallel "$(nproc)"
+echo 'export PATH="$HOME/src/llama.cpp/build/bin:$PATH"' >> "$HOME/.bashrc"
+source "$HOME/.bashrc"
+llama-cli --version
+llama-server --version
+```
+
+The executables are built in `~/src/llama.cpp/build/bin`; the PATH line makes `llama-cli` and `llama-server` available in future Bash terminals.
+
+### Optional: build llama.cpp with NVIDIA CUDA
+
+This option assumes the NVIDIA driver and CUDA Toolkit are already installed. Verify them first:
+
+```bash
+nvidia-smi
+nvcc --version
+```
+
+If both commands work, build a separate CUDA-enabled copy:
+
+```bash
+cd "$HOME/src/llama.cpp"
+cmake -S . -B build-cuda -DGGML_CUDA=ON
+cmake --build build-cuda --config Release --parallel "$(nproc)"
+echo 'export PATH="$HOME/src/llama.cpp/build-cuda/bin:$PATH"' >> "$HOME/.bashrc"
+source "$HOME/.bashrc"
+llama-cli --version
+```
+
+The CUDA build directory is placed first in `PATH` by the last line added to `.bashrc`. For NVIDIA driver and toolkit installation, follow NVIDIA's [CUDA download instructions](https://developer.nvidia.com/cuda-downloads) for Ubuntu 22.04; the supported package and driver combination depends on the GPU and installed driver.
 
 ## 1. Record the artifact and machine
 
