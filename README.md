@@ -7,6 +7,7 @@ Hands-on notebooks and data for the course on local language models. This reposi
 | Folder | What it contains |
 | --- | --- |
 | `m1/` | Three M1 notebooks: focused BERT tokenization, extended text classification, and Hugging Face Hub model search with memory estimates. |
+| `m2/` | A hardware-specific worksheet to run the same GGUF model with Ollama and llama.cpp and compare throughput. |
 | `m5/` | A weather tool built step by step (mock, FastAPI over OpenWeather, MCP) and a tool-calling loop for a local model. |
 | `m8/` | Five notebooks on Retrieval-Augmented Generation with Chroma, LangChain and local models, plus all the data they use; a LiteLLM gateway example. Fully offline once the models are downloaded. |
 | `m15/` | Compact local judges and decision models (OpenDecider, a chat model as judge, a classical classifier): typed questions, calibration metrics, cascades. Runs on CPU. |
